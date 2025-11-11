@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | InnovateTech</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-layout">
+  <aside class="sidebar">
+    <!-- Sidebar content -->
+    <div class="sidebar-logo">
+      🚀 <span>InnovateTech Admin</span>
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <li class="active">🏠 Dashboard</li>
+        <li>📦 Products</li>
+        <li>👥 Users</li>
+        <li>📊 Analytics</li>
+        <li>⚙️ Settings</li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-user">
+      <img src="images/user-avatar.png" alt="User Avatar" />
+      <span>Admin User</span>
+    </div>
+
+  </aside>
+
+  <header class="header">
+        <!-- Header bar -->
+    <h1>Dashboard Overview</h1>
+
+    <div class="header-actions">
+      <input type="text" placeholder="Search..." />
+      <button class="notif-btn">🔔</button>
+      <div class="user-dropdown">
+        <img src="images/user-avatar.png" alt="User Avatar" />
+        <span>Admin ▼</span>
+      </div>
+    </div>
+
+  </header>
+
+
+  <main class="main">
+    <!-- Stats cards -->
+    <section class="stats-grid">
+      <div class="card">
+        💰 <h3>Revenue</h3>
+        <p>$54,000</p>
+        <span class="change up">+12%</span>
+      </div>
+      <div class="card">
+        👥 <h3>Users</h3>
+        <p>1,240</p>
+        <span class="change up">+8%</span>
+      </div>
+      <div class="card">
+        📦 <h3>Orders</h3>
+        <p>320</p>
+        <span class="change down">-2%</span>
+      </div>
+      <div class="card">
+        📈 <h3>Growth</h3>
+        <p>27%</p>
+        <span class="change up">+5%</span>
+      </div>
+    </section>
+
+    <!-- Data tables -->
+    <section class="tables">
+        <h2>Recent Orders</h2>
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Product</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#001</td><td>Alice</td><td>Laptop</td><td>$1200</td><td><span class="badge success">Paid</span></td><td>Nov 10</td>
+            </tr>
+            <tr>
+              <td>#002</td><td>Bob</td><td>Phone</td><td>$800</td><td><span class="badge warning">Pending</span></td><td>Nov 09</td>
+            </tr>
+            <!-- Add 6+ rows total -->
+          </tbody>
+        </table>
+
+          <h2>User Analytics</h2>
+          <table class="analytics-table">
+            <thead>
+              <tr>
+                <th colspan="3">User Type Overview</th>
+              </tr>
+              <tr>
+                <th>User Type</th><th>Count</th><th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>New Users</td><td>320</td><td>25%</td></tr>
+              <tr><td>Returning Users</td><td>960</td><td>75%</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td>Total</td><td>1280</td><td>100%</td></tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <!-- Quick actions form -->
+    <section class="quick-actions">
+      <h2>Add New Product</h2>
+      <form>
+        <fieldset>
+          <legend>Product Information</legend>
+          <label>Product Name <input type="text" required></label>
+          <label>Category
+            <select>
+              <option>Electronics</option>
+              <option>Apparel</option>
+              <option>Home</option>
+            </select>
+          </label>
+          <label>Price <input type="number" min="1" max="10000"></label>
+          <label>SKU <input type="text" pattern="[A-Za-z0-9]{4,10}"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Inventory</legend>
+          <label>Stock Quantity <input type="number" min="0"></label>
+          <label>Reorder Level <input type="number" min="0"></label>
+          <label>Supplier
+            <select>
+              <option>Supplier A</option>
+              <option>Supplier B</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Media & Status</legend>
+          <label>Product Image <input type="file" accept="image/*"></label>
+          <label><input type="checkbox"> Featured Product</label>
+          <label><input type="radio" name="status" checked> Active</label>
+          <label><input type="radio" name="status"> Inactive</label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit">💾 Save</button>
+          <button type="reset">↩️ Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

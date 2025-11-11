@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InnovateTech Solutions — Home</title>
+  <meta name="description" content="InnovateTech Solutions — modern web, mobile & consulting services." />
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-layout">
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="InnovateTech Solutions home">
+        <img src="images/logo.png" alt="InnovateTech Solutions logo" width="140" />
+      </a>
+
+      <!-- Navigation: CSS-only hamburger -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="#services" class="btn btn-primary">Get Started</a>
+      </div>
+
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="site-main">
+    <!-- Hero -->
+    <section class="hero container" id="hero">
+      <div class="hero-content">
+        <h1>Build the future with InnovateTech Solutions</h1>
+        <p class="lead">We design scalable web & mobile products, powered by clean architecture and sustainable practices.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">Our Services</a>
+          <a class="btn btn-secondary" href="contact.html">Contact Sales</a>
+        </div>
+      </div>
+      <figure class="hero-image" aria-hidden="false">
+        <img src="images/hero-image.jpg" alt="Team collaborating around a digital product" />
+      </figure>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services container">
+      <h2>Our Services</h2>
+      <p class="section-brief">Solutions designed for performance, accessibility and long-term maintainability.</p>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="badge">New</div>
+          <img src="images/icon-web.svg" alt="" aria-hidden="true" class="service-icon" />
+          <h3>Web Development</h3>
+          <p>Modern, accessible websites using progressive enhancement and performance-first CSS.</p>
+          <a class="learn-more" href="#">Learn More →</a>
+        </article>
+
+        <article class="service-card">
+          <img src="images/icon-mobile.svg" alt="" aria-hidden="true" class="service-icon" />
+          <h3>Mobile Apps</h3>
+          <p>Cross-platform apps with native UX patterns and efficient networking.</p>
+          <a class="learn-more" href="#">Learn More →</a>
+        </article>
+
+        <article class="service-card">
+          <img src="images/icon-ai.svg" alt="" aria-hidden="true" class="service-icon" />
+          <h3>AI & Data</h3>
+          <p>ML pipelines, inference at the edge, and responsible AI practices.</p>
+          <a class="learn-more" href="#">Learn More →</a>
+        </article>
+
+        <article class="service-card">
+          <img src="images/icon-consult.svg" alt="" aria-hidden="true" class="service-icon" />
+          <h3>Consulting</h3>
+          <p>Product strategy, sustainability audits, and digital transformation planning.</p>
+          <a class="learn-more" href="#">Learn More →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- About preview -->
+    <section class="about-preview container">
+      <h2>About InnovateTech</h2>
+      <p>InnovateTech Solutions is a fictional company focused on building technology that respects people and the planet.</p>
+      <p>We collaborate with startups and enterprises to deliver measurable impact through software.</p>
+
+      <div class="mission-vision">
+        <article>
+          <h3>Our Mission</h3>
+          <p>To accelerate sustainable digital products using thoughtful engineering and inclusive design.</p>
+        </article>
+        <article>
+          <h3>Our Vision</h3>
+          <p>To be the trusted partner for organizations who want technology that lasts.</p>
+        </article>
+      </div>
+
+      <dl class="stats">
+        <dt>Projects Delivered</dt><dd>120+</dd>
+        <dt>Clients Globally</dt><dd>30+</dd>
+        <dt>Avg. Accessibility Score</dt><dd>95%</dd>
+      </dl>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <address>
+          InnovateTech Solutions<br />
+          42 Tech Park Road<br />
+          Bengaluru, India
+        </address>
+        <p><a href="tel:+911234567890">+91 12345 67890</a> • <a href="mailto:hello@innovatetech.example">hello@innovatetech.example</a></p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#" aria-label="InnovateTech on Twitter">Twitter</a></li>
+          <li><a href="#" aria-label="InnovateTech on LinkedIn">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-copy">
+        <p>© <span id="year"></span> InnovateTech Solutions — All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Close mobile nav when a link clicked (small enhancement)
+    document.querySelectorAll('.main-nav a').forEach(a => a.addEventListener('click', () => {
+      const toggle = document.getElementById('nav-toggle');
+      if (toggle) toggle.checked = false;
+    }));
+  </script>
+</body>
+</html>

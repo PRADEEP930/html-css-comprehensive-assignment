@@ -1,0 +1,300 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #64748b;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+  --sidebar-width: 280px;
+  --header-height: 70px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  background: #f9fafb;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.dashboard-layout {
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: var(--header-height) 1fr;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background: var(--secondary-color);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.sidebar-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-menu ul {
+  list-style: none;
+}
+
+.nav-menu li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.nav-menu li:hover,
+.nav-menu .active {
+  background: var(--primary-color);
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-user img {
+  width: 32px;
+  border-radius: 50%;
+}
+
+/* Header */
+.header {
+  grid-area: header;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Badges */
+.badge.success { background: var(--success-color); color: #fff; padding: 0.3em 0.6em; border-radius: 5px; }
+.badge.warning { background: var(--warning-color); color: #fff; padding: 0.3em 0.6em; border-radius: 5px; }
+
+/* Tables */
+.tables { margin: 1.5rem; background: #fff; border-radius: 10px; padding: 1rem; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd; }
+tbody tr:nth-child(even) { background: #f3f4f6; }
+
+/* Form */
+.quick-actions { margin: 1.5rem; background: #fff; padding: 1rem; border-radius: 10px; }
+fieldset { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+legend { font-weight: bold; }
+label { display: block; margin: 0.5rem 0; }
+input, select, textarea, button {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+
+/* ==========================================================================
+   Enhancements & Hover States
+   ========================================================================== */
+
+/* Navigation active state */
+.nav-menu li.active {
+  background: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Hover on stats cards */
+.card:hover {
+  background: #eef2ff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* Dropdown simulation */
+.user-dropdown:hover {
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+}
+
+/* Form focus states */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* ----- Mobile First (Default) ----- */
+@media (max-width: 768px) {
+
+  /* Dashboard grid becomes single column */
+  .dashboard-layout {
+    grid-template-areas:
+      "header"
+      "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--header-height) 1fr;
+  }
+
+  /* Sidebar hidden, becomes collapsible later if JS used */
+  .sidebar {
+    display: none;
+  }
+
+  /* Header simplified */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  /* Stats cards stack vertically */
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tables become scrollable horizontally */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Form fields stacked */
+  fieldset {
+    padding: 0.75rem;
+  }
+
+  label input,
+  label select {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ----- Tablet (768px - 1024px) ----- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .dashboard-layout {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tables, .quick-actions {
+    margin: 1rem;
+  }
+
+  table th, table td {
+    padding: 0.5rem;
+  }
+}
+
+/* ----- Desktop (>1024px) ----- */
+@media (min-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tables {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  /* Sticky table header for large screens */
+  table thead tr {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 5;
+  }
+}

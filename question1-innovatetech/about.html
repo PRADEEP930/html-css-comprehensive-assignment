@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — InnovateTech Solutions</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="images/favicon.ico" />
+</head>
+<body class="page-layout">
+  <!-- reuse same header markup for consistency -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="InnovateTech Solutions logo" width="140" /></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta"><a href="contact.html" class="btn btn-primary">Get Started</a></div>
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="container history">
+      <h1>Company History</h1>
+      <p>From prototype to product — short company history description here.</p>
+
+      <ol class="timeline">
+        <li><strong>2020</strong> — Company founded focused on web performance.</li>
+        <li><strong>2021</strong> — First enterprise client and growth of engineering team.</li>
+        <li><strong>2023</strong> — Expanded into AI-assisted user research services.</li>
+      </ol>
+    </section>
+
+    <section class="container team">
+      <h2>Our Team</h2>
+      <p class="section-brief">Small, cross-functional teams with a designer-engineer culture.</p>
+
+      <div class="team-grid">
+        <figure class="team-member">
+          <img src="images/team-photos/member1.jpg" alt="Priya — Lead Product Designer" />
+          <figcaption>
+            <h3>Priya R.</h3>
+            <p class="role">Lead Product Designer</p>
+          </figcaption>
+        </figure>
+
+        <figure class="team-member">
+          <img src="images/team-photos/member2.jpg" alt="Arjun — Backend Engineer" />
+          <figcaption>
+            <h3>Arjun K.</h3>
+            <p class="role">Backend Engineer</p>
+          </figcaption>
+        </figure>
+
+        <figure class="team-member">
+          <img src="images/team-photos/member3.jpg" alt="Leah — ML Engineer" />
+          <figcaption>
+            <h3>Leah M.</h3>
+            <p class="role">ML Engineer</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container values">
+      <h2>Our Values</h2>
+      <ul class="values-list">
+        <li><strong>Human-centred</strong> — we design for people first.</li>
+        <li><strong>Sustainable</strong> — long-term maintainability and low-carbon decisions.</li>
+        <li><strong>Transparent</strong> — clear processes & communication.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><address>InnovateTech Solutions<br />Bengaluru, India</address></div>
+      <div><ul><li><a href="#">Twitter</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+      <div><p>© <span id="year-2"></span> InnovateTech Solutions</p></div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year-2').textContent = new Date().getFullYear();</script>
+</body>
+</html>

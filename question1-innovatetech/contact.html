@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — InnovateTech Solutions</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="images/favicon.ico" />
+</head>
+<body class="page-layout">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="InnovateTech Solutions logo" width="140" /></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta"><a href="#contact-form" class="btn btn-primary">Request Quote</a></div>
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="container contact-info">
+      <h1>Contact</h1>
+      <address>
+        InnovateTech Solutions<br />
+        42 Tech Park Road<br />
+        Bengaluru, India<br />
+      </address>
+      <p><a href="tel:+911234567890">+91 12345 67890</a> • <a href="mailto:hello@innovatetech.example">hello@innovatetech.example</a></p>
+
+      <table class="office-hours" aria-describedby="office-hours-caption">
+        <caption id="office-hours-caption">Office hours (local)</caption>
+        <thead>
+          <tr><th>Day</th><th>Hours</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mon–Fri</td><td>09:00 — 18:00</td></tr>
+          <tr><td>Saturday</td><td>10:00 — 14:00</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container" id="contact-form">
+      <h2>Contact Form</h2>
+
+      <form class="contact-form" action="#" method="post" enctype="multipart/form-data" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="fullname">Full Name <span aria-hidden="true">*</span></label>
+          <input id="fullname" name="fullname" type="text" required />
+
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" pattern="[0-9+\-\s()]{7,}" />
+
+          <label for="company">Company / Organization</label>
+          <input id="company" name="company" type="text" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Inquiry Details</legend>
+
+          <label for="service">Service Interest</label>
+          <select id="service" name="service">
+            <option value="web">Web Development</option>
+            <option value="mobile">Mobile Apps</option>
+            <option value="consulting">Consulting</option>
+            <option value="other">Other</option>
+          </select>
+
+          <p>Project Timeline</p>
+          <label><input type="radio" name="timeline" value="asap" checked /> ASAP</label>
+          <label><input type="radio" name="timeline" value="1-3" /> 1–3 months</label>
+          <label><input type="radio" name="timeline" value="3-6" /> 3–6 months</label>
+          <label><input type="radio" name="timeline" value="6+" /> 6+ months</label>
+
+          <label for="budget">Budget Range</label>
+          <input id="budget" name="budget" type="range" min="0" max="100" step="1" />
+          <div class="range-labels">
+            <span>Low</span><span>High</span>
+          </div>
+
+          <p>Project Type</p>
+          <label><input type="checkbox" name="type" value="new" /> New Website</label>
+          <label><input type="checkbox" name="type" value="redesign" /> Redesign</label>
+          <label><input type="checkbox" name="type" value="mobile" /> Mobile App</label>
+          <label><input type="checkbox" name="type" value="ecom" /> E-commerce</label>
+          <label><input type="checkbox" name="type" value="other" /> Other</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Message</legend>
+          <label for="message">Project Description <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <label for="requirements">Upload requirements (docs only)</label>
+          <input id="requirements" name="requirements" type="file" accept=".pdf,.doc,.docx,.txt" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences & Terms</legend>
+          <p>Preferred contact method</p>
+          <label><input type="radio" name="contact_method" value="email" checked /> Email</label>
+          <label><input type="radio" name="contact_method" value="phone" /> Phone</label>
+          <label><input type="radio" name="contact_method" value="video" /> Video Call</label>
+
+          <label><input type="checkbox" name="terms" required /> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
+          <label><input type="checkbox" name="subscribe" /> Subscribe to newsletter</label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><address>InnovateTech Solutions<br />Bengaluru, India</address></div>
+      <div><p>© <span id="year-3"></span> InnovateTech Solutions</p></div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year-3').textContent = new Date().getFullYear();</script>
+</body>
+</html>
